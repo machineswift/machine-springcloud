@@ -1,0 +1,12 @@
+C:\Windows\System32\drivers\etc\hosts
+127.0.0.1 dept-8001.com
+127.0.0.1 dept-8002.com
+127.0.0.1 dept-8003.com
+
+127.0.0.1 consumer-80.com
+
+127.0.0.1 eureka-7001.com
+127.0.0.1 eureka-7002.com
+127.0.0.1 eureka-7003.com
+
+127.0.0.1 dashbord-9001.com
