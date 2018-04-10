@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.machine.dao.IDeptDao">
+	<resultMap id="BaseResultMap" type="com.machine.vo.Dept">
+		<id column="id" jdbcType="BIGINT" property="id" javaType="long"
+			typeHandler="org.apache.ibatis.type.LongTypeHandler" />
+		<result column="code" jdbcType="VARCHAR" property="code"
+			javaType="String" typeHandler="org.apache.ibatis.type.StringTypeHandler" />
+		<result column="name" jdbcType="VARCHAR" property="name"
+			javaType="String" typeHandler="org.apache.ibatis.type.StringTypeHandler" />
+		<result column="location" jdbcType="VARCHAR" property="location"
+			javaType="String" typeHandler="org.apache.ibatis.type.StringTypeHandler" />
+	</resultMap>
+	<insert id="doCreate" parameterType="com.machine.vo.Dept">
+		insert into
+		TB_DEPT (id,code,name,location)
+		values
+		(SEQ_DEPT.nextval,#{code,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR},#{location,jdbcType=VARCHAR})
+	</insert>
+	<select id="findById" parameterType="long" resultMap="BaseResultMap">
+		select
+		id,code,name,location from TB_DEPT where id = #{id,jdbcType=BIGINT}
+	</select>
+	<select id="findAll" parameterType="long" resultMap="BaseResultMap">
+		select
+		id,code,name,location from TB_DEPT
+	</select>
+</mapper>
